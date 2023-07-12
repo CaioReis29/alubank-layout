@@ -1,6 +1,7 @@
-import 'package:alubank/components/box_card.dart';
-import 'package:alubank/components/content_division.dart';
+import 'package:alubank/components/sections/accoount_actions.dart';
+import 'package:alubank/components/sections/account_points.dart';
 import 'package:alubank/components/sections/header.dart';
+import 'package:alubank/components/sections/recent_activity.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,14 +10,16 @@ class HomeScreen extends StatelessWidget {
 
    @override
    Widget build(BuildContext context) {
-       return Scaffold(
-           body: Column(
-             children: <Widget>[
-               const Header(),
-               BoxCard(
-                boxContent: const ContentDivision()
-                  )
-             ],
+       return const Scaffold(
+           body: SingleChildScrollView(
+             child: Column(
+               children: <Widget>[
+                 Header(),
+                 RecentActivity(),
+                 AccoountActions(),
+                 AccountPoints(),
+               ],
+             ),
            ),
        );
   }
